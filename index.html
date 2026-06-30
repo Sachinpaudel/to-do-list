@@ -6,14 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-<h1>TO DO LIST</h1>
-<h2>1. DO Homework</h2>
-<h2>2. Watch world cup</h2>
-<h2>3. Watch ronaldo win the world cup</h2>
+    <input type="text" placeholder="Enter a todo list">
+    <button  onclick="addTodo()"> Add</button>
 
-<input type="text" placeholder="Add todo" id="todoInput">
-<button onclick="addTodo()"> Add todo</button>
+    <script>
+        function addTodo() {
+            const inputEl = document.querySelector("input");
+            const Value = inputEl.value;
 
-    <script src="script.js"></script>
+            const newDivEl = document .createElemment("div");
+            newDivEl.innerHtml = Value;
+            document.querySelector("body").appendChild(newDivEl);
+        }
+    </script>
 </body>
 </html>
