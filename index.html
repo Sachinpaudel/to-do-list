@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <input type="text" placeholder="Enter a todo list">
-    <button  onclick="addTodo()"> Add</button>
+    <button onclick="addTodo()"> Add</button>
 
     <script>
-        function addTodo() {
-            const inputEl = document.querySelector("input");
-            const Value = inputEl.value;
+    function addTodo() {
+    const inputEl = document.querySelector("input");
+    const value = inputEl.value;
 
-            const newDivEl = document .createElemment("div");
-            newDivEl.innerHtml = Value;
-            document.querySelector("body").appendChild(newDivEl);
+    const newDivEl = document.createElement("div");
+    newDivEl.textContent = value;
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+
+    deleteBtn.onclick = function () {
+        newDivEl.remove();
+    };
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+
+    editBtn.onclick = function () {
+        const newValue = prompt("Enter new value:", newDivEl.firstChild.textContent);
+
+        if (newValue !== null) {
+            newDivEl.firstChild.textContent = newValue;
         }
+    };
+
+    newDivEl.appendChild(deleteBtn);
+    newDivEl.appendChild(editBtn);
+
+    document.body.appendChild(newDivEl);
+
+    inputEl.value = "";
+
+    const text = document.createElement("span");
+text.textContent = value;
+newDivEl.appendChild(text);
+}
+
     </script>
 </body>
+
 </html>

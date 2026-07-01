@@ -1,8 +1,8 @@
-function addTodo(){
-    const inputElement = document.querySelector("input");
-    const value = inputElement.value;
-    console.log(value);
-}
+// function addTodo(){
+//     const inputElement = document.querySelector("input");
+//     const value = inputElement.value;
+//     console.log(value);
+// }
 
 // -------------------------------------------------------------------------------------------------
 
@@ -17,6 +17,8 @@ function addTodo(){
 // setInterval(callback, 1000);
 
 // ----------------------------------------------------------------------------------------------
+
+
 
 
 
